@@ -1,4 +1,5 @@
 
+> THIS PROJECT IS DEPRECATED, USE [ephemeral](https://github.com/G-Corp/ephemeral)
 
 # Erlang module for managing temporary files #
 
