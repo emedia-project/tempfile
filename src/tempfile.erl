@@ -42,9 +42,11 @@ name(Prefix) ->
 name(Prefix, Options) ->
   Options1 = maps:from_list(Options),
   Ext = case maps:get(ext, Options1, ".tmp") of
+          [] -> "";
+          [$.] -> "";
           [$.|_] = Ext1 -> Ext1;
           Ext2 -> [$.|Ext2]
         end,
   Path = maps:get(path, Options1, ostemp:dir()),
-  filename:join([Path, Prefix ++ temp_utils:randstr(20) ++ Ext]).
+  filename:join([Path, Prefix ++ bucrandom:randstr(20) ++ Ext]).
 
